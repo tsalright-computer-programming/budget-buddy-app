@@ -11,7 +11,3 @@ namespace Budget_Buddy.Controllers
         [HttpGet] public IActionResult Get() => Ok(new { status = "ok" });
     }
 }
-public class AppDbContext : DbContext
-{
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-}

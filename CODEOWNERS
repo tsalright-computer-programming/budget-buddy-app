@@ -1,0 +1,31 @@
+# CODEOWNERS file for Budget Buddy Learning Project
+# This file defines who must review changes to specific files/directories
+# For more information, see: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global ownership - tsalright must review ALL changes
+* @tsalright
+
+# Specific file patterns (if needed in the future)
+# Uncomment and modify as needed:
+
+# Backend API code
+# /Budget-Buddy/ @tsalright
+
+# Documentation
+# /docs/ @tsalright
+
+# Frontend code (when added)
+# /budget-buddy-frontend/ @tsalright
+
+# Configuration files
+# *.json @tsalright
+# *.csproj @tsalright
+# *.sln @tsalright
+
+# Database files
+# *.db @tsalright
+
+# Git and project files
+# .gitignore @tsalright
+# README.md @tsalright
+# CODEOWNERS @tsalright

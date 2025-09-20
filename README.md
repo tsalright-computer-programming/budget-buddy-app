@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a **training repository** designed to teach full-stack application development using modern web technologies. The project follows a structured learning path that introduces students to backend development, database management, and API design.
+This is a **comprehensive training repository** designed to teach full-stack application development using modern web technologies. The project follows a structured, user story-driven learning path that takes students from absolute beginner to building a complete budget management application.
 
 ## Learning Objectives
 
@@ -10,48 +10,92 @@ By working through this project, students will learn:
 
 - **Backend Development**: Building RESTful APIs with ASP.NET Core
 - **Database Management**: Using Entity Framework Core with SQLite
-- **API Design**: Creating clean, well-documented endpoints
-- **Development Tools**: Command line usage, package management, and debugging
-- **Testing**: API endpoint testing and database connectivity verification
+- **API Design**: Creating clean, well-documented endpoints with proper validation
+- **Frontend Development**: Building React applications with TypeScript
+- **Development Tools**: Visual Studio, VS Code, command line, Git workflow
+- **Professional Practices**: Version control, pull requests, issue management
+- **Testing**: API endpoint testing, database connectivity, and frontend integration
 
 ## Project Structure
 
 ```
-Budget-Buddy/
-├── Controllers/           # API endpoints
-│   ├── HealthController.cs    # Simple health check
-│   └── BudgetController.cs    # Database testing endpoint
-├── Models/               # Data models (POCOs)
-│   └── Category.cs           # Category entity
-├── AppDbContext.cs       # Entity Framework context
-├── Program.cs            # Application configuration
-└── app.db               # SQLite database file
+budget-buddy-app/
+├── Budget-Buddy/                    # Backend API (.NET Core)
+│   ├── Controllers/                 # API endpoints
+│   │   ├── HealthController.cs      # Health check endpoint
+│   │   ├── CategoryController.cs    # Category CRUD operations
+│   │   └── TransactionsController.cs # Transaction CRUD operations
+│   ├── Models/                      # Data models
+│   │   ├── Category.cs              # Category entity
+│   │   └── Transaction.cs           # Transaction entity
+│   ├── DTOs/                        # Data Transfer Objects
+│   ├── Migrations/                  # Database migrations
+│   ├── AppDbContext.cs              # Entity Framework context
+│   └── Program.cs                   # Application configuration
+├── budget-buddy-frontend/           # Frontend React App (Future)
+├── docs/                           # Comprehensive documentation
+│   ├── user-strories/              # User stories (GitHub issues)
+│   └── instructions/               # Step-by-step guides
+└── README.md                       # This file
 ```
 
 ## Getting Started
 
 ### Prerequisites
-- Windows computer
-- Visual Studio 2022 Community Edition
-- .NET 9.0 SDK (included with Visual Studio)
+- **Windows or Mac computer**
+- **Visual Studio 2022 Community Edition** (Windows) or **Visual Studio Code** (Mac)
+- **.NET 9.0 SDK** (included with Visual Studio or download separately)
+- **Node.js 18+** (for frontend development)
+- **Git** (for version control)
 
 ### Quick Start
-1. **First time setup?** Follow the [Tools Installation Guide](docs/install-tools.md) to install all required software
-2. Follow the [Database Setup Guide](docs/setup-db-connections.md) for detailed step-by-step instructions
-3. Run the application: `dotnet run --project Budget-Buddy/Budget-Buddy.csproj`
-4. Test the endpoints in your browser or using the Swagger UI
+1. **First time setup?** Follow the [Tools Installation Guide](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/instructions/S0.1/create-web-api.md) to install all required software
+2. **Start with User Stories**: Each user story has detailed step-by-step instructions
+3. **Follow the Learning Path**: Work through S0.1 → S0.2 → S0.3 → S1.1 → S1.2 → S2.1 → S2.2 → S2.3 → S3.1 → S3.2 → S3.3
+4. **Use GitHub Issues**: Each user story is designed to be a GitHub issue with linked instructions
 
-## Available Endpoints
+## Learning Path & User Stories
+
+### **Phase 0: Foundation (S0.1 - S0.3)**
+- **[S0.1: Create Web API](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S0.1.md)** - Set up ASP.NET Core project and health endpoint
+- **[S0.2: Setup Database](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S0.2.md)** - Configure Entity Framework with SQLite
+- **[S0.3: Enable CORS](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S0.3.md)** - Allow React dev server to call the API
+
+### **Phase 1: Categories (S1.1 - S1.2)**
+- **[S1.1: Category Model](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S1.1.md)** - Create Category entity and database migration
+- **[S1.2: Category CRUD API](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S1.2.md)** - Build complete CRUD endpoints for categories
+
+### **Phase 2: Transactions (S2.1 - S2.3)**
+- **[S2.1: Transaction Model](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S2.1.md)** - Create Transaction entity with foreign keys
+- **[S2.2: Transaction CRUD API](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S2.2.md)** - Build transaction management endpoints
+- **[S2.3: Monthly Summary API](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S2.3.md)** - Create financial reporting endpoints
+
+### **Phase 3: Frontend (S3.1 - S3.3)**
+- **[S3.1: React App Setup](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S3.1.md)** - Create React + TypeScript application
+- **[S3.2: Categories Page](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S3.2.md)** - Build category management UI
+- **[S3.3: Transactions Page](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S3.3.md)** - Build transaction management and reporting UI
+
+## Available Endpoints (After Completion)
 
 ### Health Check
 - **URL**: `GET http://localhost:5044/health`
-- **Purpose**: Simple application health verification
+- **Purpose**: Application health verification
 - **Response**: `{"status": "ok"}`
 
-### Budget API
-- **URL**: `GET http://localhost:5044/budget`
-- **Purpose**: Database connectivity test and data retrieval
-- **Response**: JSON with database status and category count
+### Categories API
+- **URL**: `GET/POST/PUT/DELETE http://localhost:5044/api/categories`
+- **Purpose**: Manage income and expense categories
+- **Features**: CRUD operations, validation, soft delete
+
+### Transactions API
+- **URL**: `GET/POST/PUT/DELETE http://localhost:5044/api/transactions`
+- **Purpose**: Manage financial transactions
+- **Features**: Filtering, date ranges, category relationships
+
+### Summary API
+- **URL**: `GET http://localhost:5044/api/summary?month=YYYY-MM`
+- **Purpose**: Monthly financial summaries
+- **Response**: Income, expense, and net totals
 
 ### API Documentation
 - **URL**: `http://localhost:5044/swagger`
@@ -59,60 +103,93 @@ Budget-Buddy/
 
 ## Documentation
 
-### 📚 Learning Resources
-- [Tools Installation Guide](docs/install-tools.md) - Step-by-step instructions for installing Visual Studio, .NET SDK, and other required tools
-- [Creating a Basic Web API](docs/create-web-api.md) - Learn how to create a new ASP.NET Web API project from scratch in Visual Studio
-- [Database Setup Instructions](docs/setup-db-connections.md) - Complete beginner-friendly guide for setting up the database and running the application
-- [Adding POST Endpoints](docs/add-post-endpoint.md) - Learn how to create POST endpoints for adding new data to your API
+### 📚 Comprehensive Learning Resources
 
-### 🔧 Technical Details
-- **Framework**: ASP.NET Core 9.0
-- **Database**: SQLite with Entity Framework Core
+#### **User Stories & Instructions**
+Each user story includes detailed step-by-step instructions with:
+- **Beginner-friendly explanations** for every concept
+- **Code examples** with full context
+- **Troubleshooting guides** for common issues
+- **Git workflow recommendations** for professional development
+- **Prerequisites** clearly listed for each step
+
+#### **General Guides**
+- **[SQLite Setup and Usage Guide](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/instructions/general/sqlite-setup-and-usage.md)** - Complete database management guide
+- **[Git Workflow Guide](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/instructions/general/git-workflow-guide.md)** - Professional version control practices
+
+### 🔧 Technical Stack
+- **Backend**: ASP.NET Core 9.0 with Entity Framework Core
+- **Database**: SQLite for development and testing
+- **Frontend**: React 18+ with TypeScript and Vite
 - **API Documentation**: Swagger/OpenAPI
-- **Development Environment**: Visual Studio 2022 Community
+- **Development Tools**: Visual Studio 2022 (Windows) / VS Code (Mac)
+- **Version Control**: Git with GitHub integration
 
-## Learning Path
+## Learning Progression
 
-### Phase 1: Foundation
-- [x] Project setup and configuration
-- [x] Basic API endpoint creation
-- [x] Database connection setup
-- [x] Entity Framework integration
+### **Phase 0: Foundation** ✅
+- [x] **S0.1**: ASP.NET Core Web API setup
+- [x] **S0.2**: Entity Framework with SQLite database
+- [x] **S0.3**: CORS configuration for frontend integration
 
-### Phase 2: Development (Coming Soon)
-- [ ] CRUD operations for budget items
+### **Phase 1: Backend API Development** ✅
+- [x] **S1.1**: Category model and database migration
+- [x] **S1.2**: Category CRUD API with validation
+
+### **Phase 2: Advanced Backend Features** ✅
+- [x] **S2.1**: Transaction model with foreign keys
+- [x] **S2.2**: Transaction CRUD API with filtering
+- [x] **S2.3**: Monthly summary and reporting API
+
+### **Phase 3: Frontend Development** 🚧
+- [ ] **S3.1**: React + TypeScript application setup
+- [ ] **S3.2**: Category management UI
+- [ ] **S3.3**: Transaction management and reporting UI
+
+### **Future Enhancements** 🔮
 - [ ] User authentication and authorization
-- [ ] Data validation and error handling
-- [ ] Frontend integration
-
-### Phase 3: Advanced Features (Future)
-- [ ] Real-time updates
-- [ ] Data visualization
+- [ ] Data visualization and charts
 - [ ] Mobile app integration
 - [ ] Deployment and hosting
+- [ ] Real-time updates
 
 ## Troubleshooting
 
-If you encounter any issues, refer to the [troubleshooting section](docs/setup-db-connections.md#troubleshooting---common-problems-and-solutions) in the database setup guide.
+### **Common Issues & Solutions**
+- **Database Migration Errors**: See troubleshooting sections in S1.1 and S2.1 instruction guides
+- **CORS Issues**: Check S0.3 instructions for proper CORS configuration
+- **React Setup Problems**: Follow S3.1 troubleshooting section for Node.js and Vite issues
+- **Git Workflow Questions**: Refer to the [Git Workflow Guide](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/instructions/general/git-workflow-guide.md)
 
-## Contributing
+### **Getting Help**
+1. **Check the specific instruction guide** for your current user story
+2. **Review the troubleshooting section** in each guide
+3. **Take screenshots** of error messages
+4. **Note the exact steps** that led to the problem
+5. **Ask for help** with specific details and context
 
-This is a learning repository. Students should:
-1. Follow the step-by-step instructions
-2. Experiment with the code
-3. Ask questions when stuck
-4. Document their learning progress
+## Professional Development Practices
 
-## Support
+### **Git Workflow**
+- **Create feature branches** for each user story
+- **Commit frequently** with descriptive messages
+- **Create pull requests** for code review
+- **Link issues** to pull requests for tracking
+- **Follow the [Git Workflow Guide](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/instructions/general/git-workflow-guide.md)** for best practices
 
-For questions or issues:
-1. Check the troubleshooting guide
-2. Take screenshots of error messages
-3. Note the exact steps that led to the problem
-4. Ask for help with specific details
+### **Code Quality**
+- **Follow the step-by-step instructions** exactly
+- **Test your endpoints** using Swagger UI
+- **Validate your database** using SQLite Browser
+- **Experiment and learn** from the code examples
+- **Document your progress** as you work through each story
 
 ---
 
-**Happy Learning!** 🚀
+## 🎯 **Ready to Start Learning?**
 
-This project is designed to build confidence and practical skills in full-stack development. Take your time, experiment, and don't hesitate to ask questions!
+**Begin with [S0.1: Create Web API](https://github.com/tsalright-computer-programming/budget-buddy-app/blob/main/docs/user-strories/S0.1.md)** and follow the complete learning path!
+
+This project is designed to build confidence and practical skills in full-stack development. Each user story builds upon the previous ones, creating a comprehensive learning experience that takes you from beginner to building a complete budget management application.
+
+**Happy Learning!** 🚀

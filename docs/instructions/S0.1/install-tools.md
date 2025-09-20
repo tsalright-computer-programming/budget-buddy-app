@@ -113,6 +113,7 @@ This tool lets you look at your database in a nice, visual way - like opening an
 3. **Navigate to your project folder** and find `app.db`
 4. **Click "Open"**
 5. **You can now see your database tables!**
+6. **For detailed SQLite usage instructions**, see our [SQLite Setup and Usage Guide](../general/sqlite-setup-and-usage.md)
 
 ---
 

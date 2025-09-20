@@ -297,6 +297,7 @@ Now that you have a working Web API, you can:
 3. **Add data validation** and error handling
 4. **Deploy your API** to the cloud
 5. **Build a frontend** that uses your API
+6. **Learn about SQLite databases** with our [SQLite Setup and Usage Guide](../general/sqlite-setup-and-usage.md)
 
 ## Getting Help
 

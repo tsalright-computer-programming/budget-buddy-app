@@ -91,6 +91,7 @@ This installs special tools that help create and manage your database.
 - A file called "app.db" was created in your project folder
 - This is your database file (like an Excel file, but for programs)
 - Tables were created to store your data
+- **Want to explore your database?** See our [SQLite Setup and Usage Guide](../general/sqlite-setup-and-usage.md)
 
 ## Step 6: Run the Application
 
